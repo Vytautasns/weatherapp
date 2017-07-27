@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "angular-translate": "^2.15.2",
+    "angular-translate-storage-cookie": "^2.15.2",
     "babel-core": "^6.7.5",
     "babel-eslint": "^6.0.2",
     "babel-loader": "^6.2.4",

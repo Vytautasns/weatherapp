@@ -1,3 +1,5 @@
+import '../lang/locale-lt';
+
 export default function language ($translateProvider) {
   'ngInject';
 
@@ -10,20 +12,15 @@ export default function language ($translateProvider) {
     CLICKED_N_TIMES: 'You have clicked {{ n }} times'
   };
 
-  let lithuanianLanguage = {
-    PARAGRAPH: 'Srsly!!!',
-    NAMESPACE: {
-      PARAGRAPH: 'And it comes with awesome features!'
-    },
-    CLICKED_N_TIMES: 'Tu paspaudei {{ n }} kartu'
-  };
 
   $translateProvider
     .translations('en', englishLanguage)
-    .translations('lt', lithuanianLanguage);
+    .translations('lt', englishLanguage);
 
   $translateProvider
     .fallbackLanguage('en');
 
   $translateProvider.preferredLanguage('en');
+
+  $translateProvider.useCookieStorage();
 };
