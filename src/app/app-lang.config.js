@@ -1,26 +1,32 @@
-import '../lang/locale-lt';
+import * as english from './lang/locale-en';
+import * as lithuanian from './lang/locale-lt';
 
 export default function language ($translateProvider) {
   'ngInject';
 
-  let englishLanguage = {
-    HEADLINE: 'What an awesome module finaly',
-    PARAGRAPH: 'Srsly!!!',
-    NAMESPACE: {
-      PARAGRAPH: 'And it comes with awesome features!'
-    },
-    CLICKED_N_TIMES: 'You have clicked {{ n }} times'
-  };
-
-
+  /*
+  * Setup local translations
+  */
   $translateProvider
-    .translations('en', englishLanguage)
-    .translations('lt', englishLanguage);
+    .translations('en', english.LANGUAGE)
+    .translations('lt', lithuanian.LANGUAGE);
 
+   /*
+   * For later use with Ajax language loading
+   */
+  // $translateProvider
+  //   .useStaticFilesLoader({
+  //     files: [{
+  //         prefix: 'lang/locale-',
+  //         suffix: '.json'
+  //     }]
+  // });
+
+/*
+  * Translation Provider configuration
+ */
   $translateProvider
-    .fallbackLanguage('en');
-
-  $translateProvider.preferredLanguage('en');
-
-  $translateProvider.useCookieStorage();
+    .preferredLanguage('en')
+    .fallbackLanguage('en')
+    .useCookieStorage();
 };
