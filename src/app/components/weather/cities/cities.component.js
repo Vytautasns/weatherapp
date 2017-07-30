@@ -16,6 +16,7 @@ export const citiesComponent = {
     }
 
     selectCity(city) {
+      
       this.changeLocation({
        $event: {
          city: city

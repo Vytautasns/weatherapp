@@ -1,3 +1,36 @@
-# Empty angular ES6 Template
+# Sample Weather Page
 
-This is a starter template for a new Angular 1.6.x project
+Angular 1.x weather app using openWeatherMap api.
+
+### Prerequisites
+
+Need to have npm installed.
+
+### Installing
+
+
+Clone the repository
+
+```bash
+git clone
+```
+
+Intall dependencies
+
+```bash
+cd weatherApp
+npm install
+```
+
+Start local server
+
+```bash
+npm start
+```
+
+Visit page on http://127.0.0.1:8080/
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-es6-angular-webpack",
+  "name": "WeatherApp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple angular demo page using openWeatherMap api.",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
@@ -32,9 +32,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.5",
     "angular": "^1.6.5",
-    "angular-animate": "^1.6.5",
     "angular-cookies": "^1.6.5",
     "angular-dynamic-locale": "^0.1.32",
     "angular-resource": "^1.6.5",

@@ -1,5 +1,5 @@
 export class CitiesService {
-  constructor($resource) {
+  constructor() {
     'ngInject';
     this.favorites = ['Vilnius', 'Kaunas', 'Klaipėda', 'Panevėžys', 'Šiauliai', 'Palanga'];
 

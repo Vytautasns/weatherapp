@@ -4,7 +4,7 @@ import * as constants from '../../app.constants'
 * Fetches weather data from openWeatherMap api
 */
 export class WeatherService {
-  constructor($rootScope, $translate, $resource, toastr, $log) {
+  constructor($rootScope, $translate, $resource, toastr, $log, $cookies) {
     'ngInject';
 
     this.$translate = $translate;
@@ -12,9 +12,11 @@ export class WeatherService {
     this.toastr = toastr;
     this.$log = $log;
     this.$resource = $resource;
+    this.$cookies = $cookies;
 
     //  IDEA geolocate users place via api
-    this.location = constants.DEFAULT_LOCATION;
+    // Get last wathced city or fallback to default
+    this.location = this.$cookies.get('savedCity') ? this.$cookies.get('savedCity') : this.setLocation(constants.DEFAULT_LOCATION);
 
     //  openWeatherMap resource api setup
     this.openWeatherMap = this.$resource(constants.URL_OPENWEATHER_BASE_URL + ':path/:subPath?q=:location&units=:units&lang=:lang',
@@ -83,9 +85,13 @@ export class WeatherService {
 
   setLocation(location) {
     if (!location) return;
+    // Save search in a cookie
+    this.$cookies.put('savedCity', location);
     
     this.location = location;
+    return location;
   }
+
 
 
 
