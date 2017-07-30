@@ -12,7 +12,7 @@ Need to have npm installed.
 Clone the repository
 
 ```bash
-git clone
+git clone https://github.com/Vytautasns/weatherApp.git
 ```
 
 Intall dependencies
