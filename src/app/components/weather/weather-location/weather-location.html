@@ -1,0 +1,29 @@
+<div class="uk-width-1-1">
+  <h1 class="uk-margin-remove-bottom">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      {{ $ctrl.city }}
+    </h1>
+  <span class="uk-text-meta">
+      {{ $ctrl.date | date: 'EEEE, MMMM dd, yyyy' }}
+    </span>
+  <!--  Search -->
+  <a class=" uk-position-right uk-padding">
+    <i class="fa fa-search fa-2x" aria-hidden="true"
+    ng-if="!$ctrl.search"
+    ng-click="$ctrl.search = true"></i>
+</a>
+  <div class="uk-position-right uk-padding-small">
+    <div class="uk-card-default uk-card uk-box-shadow-large uk-padding uk-position-z-index" ng-if="$ctrl.search">
+      <a class="uk-position-top-right uk-padding-small">
+          <i class="fa fa-times" aria-hidden="true"
+          ng-click="$ctrl.search = false"></i>
+        </a>
+      <form>
+        <input type="text" class="uk-input uk-form-width-medium" ng-model="$ctrl.searchQuery" translate-attr="{ placeholder: 'SEARCH_HINT' }" autofocus>
+        <button class="uk-button uk-button-default uk-button-primary" ng-click="$ctrl.submit()" translate>
+          SEARCH_BUTTON
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
-import angular from 'angular';
+import { weatherModule } from './weather/weather.module';
 
-export const ComponentsModule = angular
+export const componentsModule = angular
   .module('app.components', [
-
+    weatherModule
   ])
   .name;

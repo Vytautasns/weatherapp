@@ -1,0 +1,34 @@
+<div class="bg">
+    <div class="uk-card uk-card-default uk-box-shadow-xlarge">
+        <div class="uk-padding-small uk-text-center">
+          <weather-location city="$ctrl.weatherData.name" change-location="$ctrl.changeLocation($event);">
+          </weather-location>
+          <hr class="uk-margin-small">
+        </div>
+          <div class="uk-grid uk-child-width-1-2@m uk-padding-small uk-text-center">
+
+            <div>
+              <weather-today weather="$ctrl.weatherData"></weather-today>
+              <div class="uk-divider-small uk-hidden@m uk-margin-bottom"></div>
+            </div>
+
+            <div>
+              <weather-forecast forecast="$ctrl.weatherForecast"></weather-forecast>
+            </div>
+
+          </div>
+
+    </div>
+</div>
+<!-- //Ui view -->
+
+<!-- Some other stuff -->
+<div class="uk-card uk-card-primary">
+<div class="uk-card-body uk-text-center">
+  <cities change-location="$ctrl.changeLocation($event);"></cities>
+
+</div>
+</div>
+
+
+</div>

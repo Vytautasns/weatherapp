@@ -1,4 +1,15 @@
-// Variables
-@import "variables";
-// UIkit theme
+@import 'variables';
 @import "~uikit/src/scss/uikit-theme.scss";
+@import "~angular-toastr/dist/angular-toastr.css";
+
+.bg {
+  padding: 36px;
+  background: url(../public/img/temp.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @media screen and (max-width:  600px) {
+    padding: 0;
+  }
+}

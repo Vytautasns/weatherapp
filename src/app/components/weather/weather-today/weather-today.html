@@ -1,0 +1,47 @@
+<span class="uk-text-lead" translate>TEMP_OUTSIDE</span>
+<!--
+Weather outside main
+-->
+<div class="uk-margin-top uk-grid uk-grid-collapse uk-flex uk-flex-center uk-flex-middle">
+
+  <div id="weather--today-icon">
+    <i class="wi wi-owm-{{ $ctrl.weather.weather[0].id }}" aria-hidden="true"></i>
+  </div>
+
+  <div id="weather--today-temperature">
+    <span class="uk-padding-small">
+      <strong>{{ $ctrl.weather.main.temp | weatherFilter }}</strong>
+    </span>
+  </div>
+
+  <div class="uk-width-1-1 uk-margin-large-bottom">
+    <span class="uk-text-lead uk-text-capitalize">{{ $ctrl.weather.weather[0].description }}</span>
+  </div>
+
+</div>
+<!--
+Weather details
+-->
+<div id="weather--today-details" class="uk-grid uk-grid-collapse uk-child-width-1-4 uk-flex-center">
+
+  <div>
+    <i class="wi wi-wind towards-{{ $ctrl.weather.wind.deg }}-deg"></i>
+    <span translate="WIND_SPEED" translate-values="{ speed: $ctrl.weather.wind.speed }"></span>
+  </div>
+
+  <div>
+    <i class="wi wi-humidity"></i>
+    <span>{{ $ctrl.weather.main.humidity }}%</span>
+  </div>
+
+  <div>
+    <i class="wi wi-sunrise"></i>
+    <span>{{ $ctrl.weather.sys.sunrise*1000 | date: 'shortTime' }}</span>
+  </div>
+
+  <div>
+    <i class="wi wi-sunset"></i>
+    <span>{{ $ctrl.weather.sys.sunset*1000 | date: 'shortTime' }}</span>
+  </div>
+
+</div>

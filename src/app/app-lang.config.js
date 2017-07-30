@@ -1,8 +1,14 @@
-import * as english from './lang/locale-en';
-import * as lithuanian from './lang/locale-lt';
+import * as english from '../lang/locale-en';
+import * as lithuanian from '../lang/locale-lt';
 
-export default function language ($translateProvider) {
+export default function language ($translateProvider, tmhDynamicLocaleProvider) {
   'ngInject';
+
+  /*
+  *  Dynamic locale setup
+  */
+  tmhDynamicLocaleProvider.localeLocationPattern('i18n/angular-locale_{{locale}}.js');
+  tmhDynamicLocaleProvider.useCookieStorage();
 
   /*
   * Setup local translations
@@ -11,22 +17,14 @@ export default function language ($translateProvider) {
     .translations('en', english.LANGUAGE)
     .translations('lt', lithuanian.LANGUAGE);
 
-   /*
-   * For later use with Ajax language loading
-   */
-  // $translateProvider
-  //   .useStaticFilesLoader({
-  //     files: [{
-  //         prefix: 'lang/locale-',
-  //         suffix: '.json'
-  //     }]
-  // });
-
 /*
   * Translation Provider configuration
  */
   $translateProvider
-    .preferredLanguage('en')
+    .addInterpolation('$translateMessageFormatInterpolation')
+    .useMissingTranslationHandlerLog()
+    .useSanitizeValueStrategy('escape')
+    .preferredLanguage('lt')
     .fallbackLanguage('en')
     .useCookieStorage();
 };

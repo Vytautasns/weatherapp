@@ -1,5 +1,8 @@
-export default function routing ($urlRouterProvider, $locationProvider, $translateProvider) {
+
+export default function appConfig ($sceProvider) {
   'ngInject';
-  $locationProvider.html5Mode(true);
-  $urlRouterProvider.otherwise('/');
+
+   $sceProvider.enabled(false);
+
+
 };
