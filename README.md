@@ -1,7 +1,7 @@
 # Sample Weather Page
 
 Angular 1.x weather app using openWeatherMap api.
-Live demo @ http://vytautasns.me/uzduotis
+Live demo @ https://weather.vytautasns.me
 
 ### Prerequisites
 
